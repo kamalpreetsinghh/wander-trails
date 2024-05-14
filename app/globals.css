@@ -1,76 +1,63 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
+:root {
+  --primary-color: rgb(0, 148, 106);
 
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
+  --text-color-light: rgb(0, 0, 0);
+  --background-color-light: rgb(255, 255, 255);
+  --text-grey-color-light: rgb(86, 86, 86);
+  --divider-color-light: rgb(235 234 234);
+  --sheet-background-color-light: rgb(255, 255, 255);
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
+  --text-color-dark: rgb(255, 255, 255);
+  --background-color-dark: rgb(0, 0, 0);
+  --text-grey-color-dark: rgb(156 163 175);
+  --divider-color-dark: rgb(30, 30, 30);
+  --sheet-background-color-dark: rgb(0, 0, 0);
+}
 
-      --primary: 222.2 47.4% 11.2%;
-      --primary-foreground: 210 40% 98%;
+html.dark {
+  --text-color: var(--text-color-dark);
+  --background-color: var(--background-color-dark);
+  --text-grey-color: var(--text-grey-color-dark);
+  --divider-color: var(--divider-color-dark);
+  --sheet-background-color: var(--sheet-background-color-dark);
+}
 
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: 222.2 47.4% 11.2%;
+html.light {
+  --text-color: var(--text-color-light);
+  --background-color: var(--background-color-light);
+  --text-grey-color: var(--text-grey-color-light);
+  --divider-color: var(--divider-color-light);
+  --sheet-background-color: var(--sheet-background-color-light);
+}
 
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
+body {
+  color: var(--text-color);
+  background: var(--background-color);
+}
 
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
+.rounded-button {
+  @apply transition-all text-center text-sm font-semibold 
+  py-2 px-5 rounded-full text-white;
+  background-color: var(--primary-color);
+}
 
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
+.rounded-button:hover {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
 
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 222.2 84% 4.9%;
+.text-hover:hover {
+  color: var(--text-color);
+}
 
-      --radius: 0.5rem;
-    }
+.sheet-background-color {
+  background-color: var(--sheet-background-color);
+}
 
-    .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
-
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
-
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
-
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
-
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
-    }
-  }
-
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
-  }
+.text-color {
+  color: var(--text-color);
+}
