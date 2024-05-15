@@ -24,6 +24,7 @@ const Navbar = () => {
           <Link
             className="text-primary px-6 text-xl text-hover"
             href={navLink.href}
+            key={navLink.href}
           >
             {navLink.title}
           </Link>
